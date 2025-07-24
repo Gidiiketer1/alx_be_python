@@ -1,20 +1,11 @@
-import math
+from book_class import EBook, PrintBook
 
-class Shape:
-    def area(self):
-        raise NotImplementedError("Subclasses must override area()")
+def show_book_info(book):
+    print(book)
 
-class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
+if __name__ == "__main__":
+    ebook = EBook("Python Mastery", "Gideon Kipngetich", 2023, 5)
+    printbook = PrintBook("Clean Code", "Robert C. Martin", 2008, 300)
 
-    def area(self):
-        return self.length * self.width
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return math.pi * self.radius ** 2
+    show_book_info(ebook)
+    show_book_info(printbook)
